@@ -1,13 +1,22 @@
-import './globals.css';
-import { Nav } from '@/app/components/Nav/Nav';
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+import { Nav } from "@/app/components/Nav/Nav";
+import dynamic from "next/dynamic";
+const ClockNoSSR = dynamic(() => import("@/app/components/Clock/Clock"), {
+  ssr: false,
+});
+export default function PagesLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang='en'>
-      <body className='flex p-8'>
+    <div className="p-8">
+      <div className="h-12">
+        <ClockNoSSR />
+      </div>
+      <div className="flex ">
         <Nav />
-        <div className='pl-8 mt-16 w-full'>{children}</div>
-      </body>
-    </html>
+        <div className="mt-16 pl-8 w-full">{children}</div>
+      </div>
+    </div>
   );
 }

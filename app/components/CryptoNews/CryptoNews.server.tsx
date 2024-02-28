@@ -1,4 +1,4 @@
-import { CryptoApi } from '@/app/api/crypto-api';
+/* import { CryptoApi } from '@/app/api/crypto-api';
 import { CryptoNews as CryptoNewsClient } from './CryptoNews.client';
 import Skeleton from 'react-loading-skeleton';
 export async function CryptoNews(p: {}) {
@@ -13,4 +13,11 @@ export const CryptoNewsSkel = () => {
       <Skeleton height={108} width={320} count={1} />
     </div>
   );
-};
+}; */
+import { CryptoAPI } from '@/app/api/crypto-api';
+import { CryptoNews as CryptoNewsCli } from './CryptoNews.client';
+
+export async function CryptoNews() {
+  const crypto = await CryptoAPI.fetchBitcoin();
+  return <CryptoNewsCli initialData={crypto} />;
+}

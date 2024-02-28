@@ -3,10 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import defaultNewsPng from '@/public/default-news.png';
 import { CATEGORIES_ITEMS } from '@/app/constant';
+import { ImageWithFallback } from '../ImageWithFallback/ImageWithFallback';
 export function ArticleCard(p: { article: Article }) {
   return (
     <Link
-      href='#'
+      href={`/articles/title/${p.article.title}`}
       className='space-y-4 block w-80 hover:bg-slate-50 transition transform hover:scale-105 border-2 border-gray-100 py-4 px-6 rounded-xl shadow-sm'>
       {/* Header */}
       <div className='capitalize'>
@@ -18,7 +19,7 @@ export function ArticleCard(p: { article: Article }) {
           <div className='font-bold text-md'>{p.article.category}</div>
         </div>
         {/* Date */}
-        <div className='mt-2 text-sm text-gray-400'>Published : {new Date(p.article.pubDate).toDateString()}</div>
+        <div className='mt-2 text-sm text-gray-600'>Published : {new Date(p.article.pubDate).toDateString()}</div>
       </div>
 
       {/* Body*/}
@@ -26,12 +27,14 @@ export function ArticleCard(p: { article: Article }) {
         {/* Title*/}
         <div className='font-semibold text-xl line-clamp-2 h-14'>{p.article.title}</div>
         {/* Article image*/}
-        <Image
-          className='h-40'
+        <ImageWithFallback
+          className='h-40 rounded-lg'
           height={200}
           width={300}
+          priority
           src={p.article.image_url || defaultNewsPng}
           alt='Image for article'
+          fallback={defaultNewsPng}
         />
       </div>
     </Link>

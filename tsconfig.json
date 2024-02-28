@@ -24,6 +24,14 @@
       // "@/app/*": ["app/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/ArticleCard"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/components/ArticleCard",
+    ".next/types/**/*.ts",
+    "fake-server.js"
+  ],
   "exclude": ["node_modules"]
 }

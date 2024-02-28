@@ -11,11 +11,7 @@ export default async function ArticleDetailPage(p: { params: { title: string } }
     <div className='space-y-2'>
       <div className='text-md capitalize flex items-center gap-2'>
         <div className='flex justify-center items-center border border-slate-300 rounded-full w-10 h-10'>
-          <Image
-            className='w-7 h-7'
-            alt={'Icon for ' + category}
-            src={CATEGORIES_ITEMS[category as keyof typeof CATEGORIES_ITEMS].src}
-          />
+          <Image className='w-7 h-7' alt={'Icon for ' + category} src={CATEGORIES_ITEMS[category].src} />
         </div>
         <div className='font-semibold'>{category}</div>
       </div>

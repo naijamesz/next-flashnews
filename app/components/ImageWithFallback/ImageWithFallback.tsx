@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 'use client';
-
 import Image, { ImageProps, StaticImageData } from 'next/image';
 import { useState } from 'react';
 

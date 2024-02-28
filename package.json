@@ -6,13 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fake-server": "json-server --watch ./fake-server/db.json --routes ./fake-server/routes.json --port 3090"
   },
   "dependencies": {
+    "json-server": "1.0.0-alpha.23",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-loading-skeleton": "^3.4.0"
+    "react-loading-skeleton": "^3.4.0",
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",

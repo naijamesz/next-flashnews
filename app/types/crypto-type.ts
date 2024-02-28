@@ -1,9 +1,9 @@
-interface CryptoResponse {
+export interface CryptoResponse {
   data: CryptoItem;
   timestamp: number;
 }
 
-interface CryptoItem {
+export interface CryptoItem {
   id: string;
   rank: string;
   symbol: string;
@@ -15,4 +15,5 @@ interface CryptoItem {
   priceUsd: string;
   changePercent24Hr: string;
   vwap24Hr: string;
+  explorer: string;
 }
