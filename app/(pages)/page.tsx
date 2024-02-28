@@ -1,3 +1,10 @@
+import { ArticleApi } from '@/app/api/article-api';
+import { LatestNews } from '@/app/components/LatestNews/LatestNews';
+
 export default function IndexPage() {
-  return <div>Hello from index page</div>;
+  return (
+    <div>
+      <LatestNews />
+    </div>
+  );
 }
